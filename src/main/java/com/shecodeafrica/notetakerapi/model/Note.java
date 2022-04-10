@@ -11,7 +11,6 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Note {
 
     @Id
@@ -21,6 +20,9 @@ public class Note {
     @Column(unique = true)
     private String title;
     private String content;
+    @Column(name = "created_date", columnDefinition="DATE")
     private Date createdDate;
+
+    @Column(name = "updated_date", columnDefinition="DATE")
     private Date updatedDate;
 }

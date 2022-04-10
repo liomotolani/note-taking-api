@@ -30,7 +30,7 @@ public class NoteService {
     }
 
     public NoteResponseDTO updateNote(UpdateNoteInputDto dto, int id) {
-        Note note = noteRepository.getById(id);
+        Note note = noteRepository.findById(id).get();
 
         if(!noteRepository.existsById(id)){
             return new NoteResponseDTO(Status.NOT_FOUND);
@@ -58,7 +58,6 @@ public class NoteService {
     }
 
     public NoteResponseDTO deleteNoteById(int id){
-        Note note = noteRepository.getById(id);
         if(!noteRepository.existsById(id)){
             return new NoteResponseDTO(Status.NOT_FOUND);
         }

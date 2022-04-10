@@ -1,9 +1,11 @@
 package com.shecodeafrica.notetakerapi.dto.output;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.shecodeafrica.notetakerapi.dto.Status;
 import com.shecodeafrica.notetakerapi.model.Note;
 
 public class NoteResponseDTO extends StandardResponseDTO{
+    @JsonProperty
     private Note note;
 
     public NoteResponseDTO(){
